@@ -7,20 +7,22 @@ class Pet extends React.Component {
       <section>
         <header>
           <img
-            src={this.props.animal.imageURL}
-            alt={this.props.animal.imageDescription}
+
+            // changed all props.animal. .. to props..
+            src={this.props.imageURL}
+            alt={this.props.imageDescription}
           />
-          <h3>{this.props.animal.name}</h3>
+          <h3>{this.props.name}</h3>
         </header>
         <dl>
           <dt>Sex:</dt>
-          <dd>{this.props.animal.sex}</dd>
+          <dd>{this.props.sex}</dd>
           <dt>Age:</dt>
-          <dd>{this.props.animal.age}</dd>
+          <dd>{this.props.age}</dd>
           <dt>Breed:</dt>
-          <dd>{this.props.animal.breed}</dd>
+          <dd>{this.props.breed}</dd>
           <dt>Story:</dt>
-          <dd>{this.props.animal.story}</dd>
+          <dd>{this.props.story}</dd>
         </dl>
         <button onClick={() => this.props.adoptPet(this.props.adopt)}>
           Adopt

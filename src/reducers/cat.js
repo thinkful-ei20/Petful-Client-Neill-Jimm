@@ -15,7 +15,7 @@ export default function catReducer(state = initialState, action) {
 
     case 'FETCH_CAT_SUCCESS':
       return Object.assign({}, state, {
-        pets: action.payload,
+        data: action.payload,
         loading: false
       })
 
@@ -34,7 +34,7 @@ export default function catReducer(state = initialState, action) {
 
     case 'ADOPT_CAT_SUCCESS':
       return Object.assign({}, state, {
-        pets: action.payload,
+        data: action.payload,
         error: null,
         loading: false
 
