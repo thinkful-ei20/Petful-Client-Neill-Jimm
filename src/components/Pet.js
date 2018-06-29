@@ -1,4 +1,5 @@
 import React from 'react';
+import '../index.css';
 
 class Pet extends React.Component {
   render() {
@@ -21,7 +22,7 @@ class Pet extends React.Component {
           <dt>Story:</dt>
           <dd>{this.props.animal.story}</dd>
         </dl>
-        <button onClick={this.props.onAdoptClick}>
+        <button onClick={() => this.props.onAdoptPet(this.props.adopt)}>
           Adopt
         </button>
       </section>
