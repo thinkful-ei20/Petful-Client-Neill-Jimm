@@ -6,19 +6,24 @@ import {connect} from 'react-redux';
 // import {bindActionCreators} from 'redux';
 
 export class Dashboard extends React.Component {
-
-  componentDidMount() {
+  constructor(props){
+    super(props);
     this.props.dispatch(fetchCat());
     this.props.dispatch(fetchDog());
   }
 
+  // componentDidMount() {
+  //   this.props.dispatch(fetchCat());
+  //   this.props.dispatch(fetchDog());
+  // }
+
   onAdoptPet = (data) => {
     if (data === 'cat') {
 
-      this.props.dispatch(adoptCat)
+      this.props.dispatch(adoptCat())
     } else if (data === 'dog') {
       this.props.dispatch(adoptDog())
-    }
+    } 
   }
 
   onAdoptClick() {
@@ -33,9 +38,9 @@ export class Dashboard extends React.Component {
       </header>
       <main>
 
-        <Pet animal={this.props.catToAdopt} adoptPet={() => this.props.adoptCat}/>
+        <Pet animal={this.props.cat} adoptPet={() => this.props.adoptCat}/>
 
-        <Pet animal={this.props.dogToAdopt} adoptPet={() => this.props.adoptDog}/>
+        <Pet animal={this.props.dog} adoptPet={() => this.props.adoptDog}/>
 
       </main>
     </div>);
@@ -43,6 +48,9 @@ export class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({cats: state.cat, dogs: state.dog})
+const mapStateToProps = state => ({
+  cat: state.cat.data.animal, 
+  dog: state.dog.data.animal
+})
 
 export default connect(mapStateToProps)(Dashboard);

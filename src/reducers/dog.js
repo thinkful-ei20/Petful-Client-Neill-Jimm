@@ -1,5 +1,8 @@
 const initialState = {
-  data: null,
+  data: {
+    animal: {},
+    message: ''
+  },
   error: null,
   loading: false
 };

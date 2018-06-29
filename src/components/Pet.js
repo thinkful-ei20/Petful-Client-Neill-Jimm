@@ -9,20 +9,20 @@ class Pet extends React.Component {
           <img
 
             // changed all props.animal. .. to props..
-            src={this.props.imageURL}
-            alt={this.props.imageDescription}
+            src={this.props.animal.imageURL}
+            alt={this.props.animal.imageDescription}
           />
-          <h3>{this.props.name}</h3>
+          <h3>{this.props.animal.name}</h3>
         </header>
         <dl>
           <dt>Sex:</dt>
-          <dd>{this.props.sex}</dd>
+          <dd>{this.props.animal.sex}</dd>
           <dt>Age:</dt>
-          <dd>{this.props.age}</dd>
+          <dd>{this.props.animal.age}</dd>
           <dt>Breed:</dt>
-          <dd>{this.props.breed}</dd>
+          <dd>{this.props.animal.breed}</dd>
           <dt>Story:</dt>
-          <dd>{this.props.story}</dd>
+          <dd>{this.props.animal.story}</dd>
         </dl>
         <button onClick={() => this.props.adoptPet(this.props.adopt)}>
           Adopt
