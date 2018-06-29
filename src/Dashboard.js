@@ -2,6 +2,7 @@ import React from 'react';
 import Pet from './components/Pet'
 import {fetchDog, adoptDog} from './actions/dog';
 import {adoptCat, fetchCat} from './actions/cat'
+import {connect} from 'react-redux';
 
 export class Dashboard extends React.Component {
 
@@ -46,3 +47,10 @@ export class Dashboard extends React.Component {
 
   }
 }
+
+const mapStateToProps = state => ({
+  
+})
+
+
+export default connect(mapStateToProps)(Dashboard);
