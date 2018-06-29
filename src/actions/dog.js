@@ -4,8 +4,8 @@ export const fetchDog = () => {
   const options = {
     method: 'GET',
     headers: {
-      accept: 'applidogion/json',
-      'content-type': 'applidogion/json'
+      accept: 'application/json',
+      'content-type': 'application/json'
     }
   };
   return function(dispatch) {
@@ -20,7 +20,7 @@ export const fetchDog = () => {
         }
       })
       .then(res => dispatch(fetchDogSuccess(res)))
-      .dogch(err => dispatch(fetchDogError(err)))
+      .catch(err => dispatch(fetchDogError(err)))
   };
 }
 
@@ -29,7 +29,7 @@ export const adoptDog = () => dispatch => {
   return fetch(`${API_BASE_URL}/dog`, {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'applidogion/json'
+      'Content-Type': 'application/json'
     }
   })
   .then(res => {
@@ -39,7 +39,7 @@ export const adoptDog = () => dispatch => {
       return res.json();
     })
     .then(data => dispatch(adoptDogSuccess(data)))
-    .dogch(err => dispatch(adoptDogError(err)));
+    .catch(err => dispatch(adoptDogError(err)));
 };
 
 function fetchDogRequest() {

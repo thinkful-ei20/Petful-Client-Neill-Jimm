@@ -10,10 +10,10 @@ export class Dashboard extends React.Component {
   }
 
   onAdoptPet = (data) => {
-    if (data == 'cat') {
+    if (data === 'cat') {
 
       this.props.dispatch(adoptCat)
-    } else if (data == 'dog') {
+    } else if (data === 'dog') {
       this.props.dispatch(adoptDog())
     }
   }
@@ -31,9 +31,15 @@ export class Dashboard extends React.Component {
         </header>
       <main>
 
-        <Pet animal={this.props.catToAdopt} adoptPet={() => this.props.dispatch(adoptCat())}/>
+        <Pet
+          animal={this.props.catToAdopt}
+          adoptPet={() => this.props.dispatch(adoptCat())}
+        />
 
-        <Pet animal={this.props.dogToAdopt} adoptPet={() => this.props.dispatch(adoptDog())}/>
+        <Pet
+          animal={this.props.dogToAdopt}
+          adoptPet={() => this.props.dispatch(adoptDog())}
+        />
 
       </main>
     </div>);
