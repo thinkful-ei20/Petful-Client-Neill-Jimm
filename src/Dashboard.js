@@ -3,14 +3,13 @@ import Pet from './components/Pet'
 import {fetchDog, adoptDog} from './actions/dog';
 import {adoptCat, fetchCat} from './actions/cat'
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+// import {bindActionCreators} from 'redux';
 
 export class Dashboard extends React.Component {
 
   componentDidMount() {
-    //
-    this.props.fetchCat;
-    this.props.fetchDog;
+    this.props.dispatch(fetchCat());
+    this.props.dispatch(fetchDog());
   }
 
   onAdoptPet = (data) => {
@@ -46,13 +45,4 @@ export class Dashboard extends React.Component {
 
 const mapStateToProps = state => ({cats: state.cat, dogs: state.dog})
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({
-    fetchCat,
-    fetchDog,
-    adoptCat,
-    adoptDog
-  }, dispatch)
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps)(Dashboard);

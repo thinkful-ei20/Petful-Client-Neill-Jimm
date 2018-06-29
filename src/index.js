@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import {Dashboard} from './Dashboard';
+import Dashboard from './Dashboard';
 import { Provider } from 'react-redux';
 import store from './store'
 

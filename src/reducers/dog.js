@@ -15,7 +15,7 @@ export default function dogReducer(state = initialState, action) {
 
     case 'FETCH_DOG_SUCCESS':
       return Object.assign({}, state, {
-        pets: action.payload,
+        data: action.payload,
         loading: false
       })
 
@@ -34,7 +34,7 @@ export default function dogReducer(state = initialState, action) {
 
     case 'ADOPT_DOG_SUCCESS':
       return Object.assign({}, state, {
-        pets: action.payload,
+        data: action.payload,
         error: null,
         loading: false
 
