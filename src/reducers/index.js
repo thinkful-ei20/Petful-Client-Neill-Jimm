@@ -1,4 +1,4 @@
-import combineReducers from 'redux';
+import { combineReducers } from 'redux';
 import cat from './cat'
 import dog from './dog'
 
