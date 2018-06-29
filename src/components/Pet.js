@@ -1,5 +1,8 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import '../index.css';
+import {adoptDog} from '../actions/dog';
+import {adoptCat} from '../actions/cat';
 
 class Pet extends React.Component {
   render() {
@@ -24,7 +27,16 @@ class Pet extends React.Component {
           <dt>Story:</dt>
           <dd>{this.props.animal.story}</dd>
         </dl>
-        <button onClick={() => this.props.adoptPet(this.props.adopt)}>
+        <button onClick={() => {
+          console.log('click');
+          if(this.props.is === 'dog'){
+            console.log('dog pressed');
+            this.props.dispatch(adoptDog());
+          }
+          if(this.props.is === 'cat'){
+            this.props.dispatch(adoptCat());
+          }
+        }}>
           Adopt
         </button>
       </section>
@@ -32,4 +44,4 @@ class Pet extends React.Component {
   }
 }
 
-export default Pet;
+export default connect()(Pet);

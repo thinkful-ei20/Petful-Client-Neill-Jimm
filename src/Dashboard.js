@@ -1,7 +1,7 @@
 import React from 'react';
 import Pet from './components/Pet'
 import {fetchDog, adoptDog} from './actions/dog';
-import {adoptCat, fetchCat} from './actions/cat'
+import {adoptCat, fetchCat} from './actions/cat';
 import {connect} from 'react-redux';
 // import {bindActionCreators} from 'redux';
 
@@ -38,9 +38,15 @@ export class Dashboard extends React.Component {
       </header>
       <main>
 
-        <Pet animal={this.props.cat} adoptPet={() => this.props.adoptCat}/>
+        <Pet animal={this.props.cat} 
+          adoptPet={adoptCat}
+          is={'cat'}
+        />
 
-        <Pet animal={this.props.dog} adoptPet={() => this.props.adoptDog}/>
+        <Pet animal={this.props.dog} 
+          adoptPet={adoptDog}
+          is={'dog'}
+        />
 
       </main>
     </div>);

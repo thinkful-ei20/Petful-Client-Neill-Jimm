@@ -40,7 +40,6 @@ export default function dogReducer(state = initialState, action) {
         data: action.payload,
         error: null,
         loading: false
-
       })
 
     case 'ADOPT_DOG_ERROR':

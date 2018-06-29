@@ -38,7 +38,9 @@ export const adoptCat = () => dispatch => {
       }
       return res.json();
     })
-    .then(data => dispatch(adoptCatSuccess(data)))
+    .then(data => dispatch(
+      adoptCatSuccess({animal: data.nextAnimal, message: data.message})
+    ))
     .catch(err => dispatch(adoptCatError(err)));
 };
 
@@ -70,7 +72,8 @@ function adoptCatRequest() {
 
 function adoptCatSuccess(data) {
   return {
-    type: 'ADOPT_CAT_SUCCESS'
+    type: 'ADOPT_CAT_SUCCESS',
+    payload: data
   }
 }
 
