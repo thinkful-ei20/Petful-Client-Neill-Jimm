@@ -3,6 +3,7 @@ import Pet from './components/Pet'
 import {fetchDog, adoptDog} from './actions/dog';
 import {adoptCat, fetchCat} from './actions/cat';
 import {connect} from 'react-redux';
+import './dashboard.css'
 // import {bindActionCreators} from 'redux';
 
 export class Dashboard extends React.Component {
@@ -23,7 +24,7 @@ export class Dashboard extends React.Component {
       this.props.dispatch(adoptCat())
     } else if (data === 'dog') {
       this.props.dispatch(adoptDog())
-    } 
+    }
   }
 
   onAdoptClick() {
@@ -33,17 +34,17 @@ export class Dashboard extends React.Component {
   render() {
 
     return (<div>
-      <header role='banner'>
+      <header role='banner' className='title'>
         <h1>Petful</h1>
       </header>
       <main>
 
-        <Pet animal={this.props.cat} 
+        <Pet animal={this.props.cat}
           adoptPet={adoptCat}
           is={'cat'}
         />
 
-        <Pet animal={this.props.dog} 
+        <Pet animal={this.props.dog}
           adoptPet={adoptDog}
           is={'dog'}
         />
@@ -55,7 +56,7 @@ export class Dashboard extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  cat: state.cat.data.animal, 
+  cat: state.cat.data.animal,
   dog: state.dog.data.animal
 })
 

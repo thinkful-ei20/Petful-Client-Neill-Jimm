@@ -1,0 +1,25 @@
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  padding: 10px;
+  font-size: 22px;
+  border-bottom: 2px solid black;
+  background-color: #7ee2af61;
+}
+
+.title p {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+
+section {
+  background-color: #eeeeef;
+}
