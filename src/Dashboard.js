@@ -35,7 +35,7 @@ export class Dashboard extends React.Component {
 
     return (<div>
       <header role='banner' className='title'>
-        <h1>Petful</h1>
+        <h1>Neill and Jimm's Petful</h1>
       </header>
       <main>
 
